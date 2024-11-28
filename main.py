@@ -1,19 +1,29 @@
+### BookBot ###
+"""
+Takes a a book as input, escifically the path to the book, and returns:
+
+- number of words in the book
+-amountthe letter appears
+
+"""
 
 book_path = "books/frankenstein.txt"
 
 def main():
 
     text = get_book_text(book_path)
-    print(f"--- Begin report of {book_path} ---\n")
-    print(f"{count_words(text)} words found in the document\n")
-    
-    
-    def sort_on(dict):
-        return dict["times"]
-    
+
     word_occurrences = list_letters(count_letters(text))
     word_occurrences.sort(reverse=True, key=sort_on)
 
+    #this function is especifically made for the method sort(), this way it sorts in base of the number of times the letter appears
+    def sort_on(dict):
+        return dict["times"]
+
+
+    print(f"--- Begin report of {book_path} ---\n")
+    print(f"{count_words(text)} words found in the document\n")
+    
     for word in word_occurrences:
         if word["letter"].isalpha():
             print(f"The {word["letter"]} character was found {word["times"]} times")
