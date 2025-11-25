@@ -18,4 +18,14 @@ def count_chars(text):
       else:
         chars[char] = 1
    return chars
-   
+
+def sort_on(items):
+   return items["num"]
+
+
+def sorted_chars(chars):
+   chars_list = [] 
+   for key in chars:
+      chars_list.append({"name":key, "num":chars[key]})
+   chars_list.sort(reverse=True, key=sort_on) 
+   return chars_list
