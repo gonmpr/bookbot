@@ -1,3 +1,3 @@
 # Bookbot
 
-BookBot is my first [Boot.dev](https://www.boot.dev) project!
+Takes a Book in TXT format and return data about it
